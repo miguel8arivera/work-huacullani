@@ -4,7 +4,9 @@
   "description": "rest-API basic for huacullani",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/server.js",
+    "start:dev": ""
   },
   "repository": {
     "type": "git",
