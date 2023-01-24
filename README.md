@@ -1,4 +1,4 @@
-# Curso de NodeJs con Typescript y TypeORM
+# Proyecto de NodeJs con Typescript y TypeORM
 
 En este curso aprenderas como generar una API REST compleja con NodeJs utilizando como lenguajes core `Typescript` y `TypeORM` como ORM SQL.
 
