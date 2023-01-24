@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import { UserRouter } from './router/user.router';
+import { ProductRouter } from './router/product.router';
 
 class serverBootstrap {
   public app: express.Application = express();
@@ -11,13 +13,13 @@ class serverBootstrap {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan('dev'));
     this.app.use(cors());
+    this.app.use('/api', this.routes());
 
-    this.app.get('/api/main', (req, res) => {
-      res.status(200).json({
-        message: 'Hello World',
-      });
-    });
     this.listen();
+  }
+
+  routes(): Array<express.Router> {
+    return [new UserRouter().router, new ProductRouter().router];
   }
 
   public listen() {
