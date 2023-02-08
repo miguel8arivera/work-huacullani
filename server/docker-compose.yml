@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  huacullani_db:
+    image: mysql:5.7
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+    ports:
+      - '3312:3306'
+    environnement:
+      MYSQL_DATABASE: huacullani_db
+      MYSQL_ROOT_USER: uhuacullani
+      MYSQL_USER: uhuacullani
+      MySQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: secret

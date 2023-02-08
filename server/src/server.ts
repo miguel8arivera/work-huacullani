@@ -7,7 +7,7 @@ import { ConfigServer } from './config/config';
 
 class serverBootstrap extends ConfigServer {
   public app: express.Application = express();
-  private port: number = this.getEnviromentNumber('PORT');
+  private port: number = this.getEnviromentNumber('PORT') || 3000;
   constructor() {
     super();
     this.app.use(express.json());
