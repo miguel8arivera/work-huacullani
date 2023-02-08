@@ -1,9 +1,10 @@
 import './App.css';
+import { NavbarVertical } from './common';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Wold</h1>
+      <NavbarVertical />
     </div>
   );
 }
