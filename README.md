@@ -25,5 +25,5 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 Dependencias necesarias Front:
 
 ```
-npm install class-validator cors dotenv express morgan mysql typescript express typeorm typeorm-naming-strategies typescript
+yarn add Material UI react-router-dom redux-toolkit redux formik
 ```
