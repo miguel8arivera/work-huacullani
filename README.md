@@ -25,5 +25,5 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 Dependencias necesarias Front:
 
 ```
-yarn add Material UI react-router-dom redux-toolkit redux formik
+yarn add @mui/material @emotion/react @emotion/styled react-router-dom redux-toolkit redux formik
 ```
