@@ -11,7 +11,7 @@ En este curso aprenderas como generar una API REST compleja con NodeJs utilizand
 
 ## Lista de dependencias para intalacion:
 
-Dependencias necesarias:
+Dependencias necesarias Back:
 
 ```
 npm install class-validator cors dotenv express morgan mysql typescript express typeorm typeorm-naming-strategies typescript
@@ -21,4 +21,9 @@ Dependencias de desarrollo necesarias:
 
 ```
 npm install -D @types/cors @types/express @types/morgan concurrently nodemon
+```
+Dependencias necesarias Front:
+
+```
+yarn add @mui/material @emotion/react @emotion/styled react-router-dom redux-toolkit redux formik
 ```
