@@ -4,7 +4,7 @@ import cors from 'cors';
 import { UserRouter } from './router/user.router';
 import { ProductRouter } from './router/product.router';
 import { ConfigServer } from './config/config';
-import { Connection, createConnection } from 'typeorm';
+import { DataSource } from 'typeorm';
 
 class serverBootstrap extends ConfigServer {
   public app: express.Application = express();
@@ -25,8 +25,13 @@ class serverBootstrap extends ConfigServer {
     return [new UserRouter().router, new ProductRouter().router];
   }
 
-  async dbConnet(): Promise<Connection> {
-    return await createConnection(this.typeORMconfig);
+  async dbConnet(): Promise<void> {
+    try {
+      await new DataSource(this.typeORMconfig).initialize();
+      console.log(`🚀  Database Connected`);
+    } catch (error) {
+      console.log(`🚀 Database Connection Error: ${error}`);
+    }
   }
 
   public listen() {

@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import { ConnectionOptions } from 'typeorm';
+import { DataSourceOptions } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 export abstract class ConfigServer {
@@ -38,7 +38,7 @@ DB_DATABASE=huacullani_db
 DB_USER= uhuacullani
 DB_PASSWORD= secret */
 
-  public get typeORMconfig(): ConnectionOptions {
+  public get typeORMconfig(): DataSourceOptions {
     return {
       type: 'mysql',
       host: this.getEnviroment('DB_HOST'),
