@@ -1,4 +1,4 @@
-import { ProductController } from '../controllers/product.controller';
+import { ProductController } from '../../user/controllers/product.controller';
 import { BaseRoute } from './router';
 
 export class ProductRouter extends BaseRoute<ProductController> {

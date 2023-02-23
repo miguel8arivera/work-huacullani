@@ -1,8 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import { UserRouter } from './router/user.router';
-import { ProductRouter } from './router/product.router';
+import { UserRouter } from './user/user.router';
+import { ProductRouter } from './shared/router/product.router';
 import { ConfigServer } from './config/config';
 import { DataSource } from 'typeorm';
 

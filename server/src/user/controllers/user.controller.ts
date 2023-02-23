@@ -6,6 +6,9 @@ export class UserController {
       user: 'Miguel Angel ',
       lastName: 'Ochoa Rivera',
       email: 'miguel@gmail.com',
+      password: 'secret',
+      numberPhone: 123456789,
+      rol: 'admin',
     });
   }
 }
