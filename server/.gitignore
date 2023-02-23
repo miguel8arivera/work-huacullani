@@ -8,9 +8,7 @@ yarn-error.log*
 node_modules
 dist
 dist-ssr
-.env
-.production.env
-docker-compose.yml
+
 *.local
 
 # Editor directories and files
