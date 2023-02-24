@@ -27,3 +27,11 @@ Dependencias necesarias Front:
 ```
 yarn add @mui/material @emotion/react @emotion/styled react-router-dom redux-toolkit redux formik
 ```
+
+Dependencias necesarias Front:
+
+```
+npm o yarn add -D eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-react
+@typescript-eslint/eslint-plugin @typescript-eslint/parser 
+```
+
