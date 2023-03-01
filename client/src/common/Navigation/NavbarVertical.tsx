@@ -14,6 +14,8 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 import { FC } from 'react';
+import { Grid } from '@mui/material';
+import { TableProductsSold } from '../../components';
 
 const drawerWidth = 240;
 
@@ -54,9 +56,12 @@ export const NavbarVertical: FC<{}> = () => (
     </Drawer>
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <Toolbar />
-      <Typography variant="h1" sx={{ textAlign: 'center' }}>
-        Form
+      <Typography variant="h2" sx={{ textAlign: 'center' }}>
+        Dashboard Huacullani
       </Typography>
+      <Grid sx={{ margin: 6 }}>
+        <TableProductsSold />
+      </Grid>
     </Box>
   </Box>
 );
