@@ -1,11 +1,13 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import { NavbarVertical } from './common';
+import { ThemeConfig } from './config/theme.config';
+import { router } from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <NavbarVertical />
-    </div>
+    <ThemeConfig>
+      <RouterProvider router={router} />
+    </ThemeConfig>
   );
 }
 
