@@ -56,8 +56,8 @@ export const NavbarVertical: FC<{}> = () => (
     </Drawer>
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <Toolbar />
-      <Typography variant="h2" sx={{ textAlign: 'center' }}>
-        Dashboard Huacullani
+      <Typography variant="h3" sx={{ textAlign: 'center' }}>
+        Ventas Huacullani
       </Typography>
       <Grid sx={{ margin: 6 }}>
         <TableProductsSold />

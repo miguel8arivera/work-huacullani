@@ -20,6 +20,7 @@ export const TableProductsSold: FC<{}> = function () {
       width: 100,
       editable: true,
       headerAlign: 'center',
+      align: 'center',
     },
     {
       field: 'customer',
