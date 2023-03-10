@@ -52,9 +52,6 @@ export const ProductsFormPage: FC<{}> = function () {
       alignItems={'center'}
       sx={{ maxWidth: 'md', pt: 6 }}
     >
-      <Typography variant="h4" gutterBottom>
-        Formulario del Producto
-      </Typography>
       <Card>
         <CardContent>
           <form onSubmit={formik.handleSubmit} noValidate>

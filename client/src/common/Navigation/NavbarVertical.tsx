@@ -15,55 +15,68 @@ import MailIcon from '@mui/icons-material/Mail';
 import { FC } from 'react';
 import { Button, Grid } from '@mui/material';
 import { TableProductsSold } from '../../components';
+import { ModalFormProducts } from '../../components/modal';
+import { ProductsFormPage } from '../../components/form';
 
 const drawerWidth = 240;
 
-export const NavbarVertical: FC<{}> = () => (
-  <Box sx={{ display: 'flex' }}>
-    <CssBaseline />
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div" textTransform={'uppercase'}>
-          Huacullani
-        </Typography>
-      </Toolbar>
-    </AppBar>
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
+export const NavbarVertical: FC<{}> = function () {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div" textTransform={'uppercase'}>
+            Huacullani
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        sx={{
           width: drawerWidth,
-          boxSizing: 'border-box',
-        },
-      }}
-    >
-      <Toolbar />
-      <Box sx={{ overflow: 'auto' }}>
-        <List sx={{ marginTop: '80px' }}>
-          {['Almacen', 'Ventas', 'Pedidos', 'Facturas'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+      >
+        <Toolbar />
+        <Box sx={{ overflow: 'auto' }}>
+          <List sx={{ marginTop: '80px' }}>
+            {['Almacen', 'Ventas', 'Pedidos', 'Facturas'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar />
+        <Typography variant="h3" sx={{ textAlign: 'center' }}>
+          Ventas Huacullani
+        </Typography>
+        <div style={{ display: 'flex', justifyContent: 'end', marginRight: 60, marginTop: 10 }}>
+          <Button variant="contained" onClick={handleOpen}>
+            Agregar Venta
+          </Button>
+        </div>
+        <Grid sx={{ margin: 6 }}>
+          <TableProductsSold />
+        </Grid>
       </Box>
-    </Drawer>
-    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <Toolbar />
-      <Typography variant="h3" sx={{ textAlign: 'center' }}>
-        Ventas Huacullani
-      </Typography>
-      <div style={{ display: 'flex', justifyContent: 'end', marginRight: 60, marginTop: 10 }}>
-        <Button variant="contained">Agregar Venta</Button>
-      </div>
-      <Grid sx={{ margin: 6 }}>
-        <TableProductsSold />
-      </Grid>
+      <ModalFormProducts open={open} handleClose={handleClose} title={'Formulario de productos'}>
+        <ProductsFormPage />
+      </ModalFormProducts>
     </Box>
-  </Box>
-);
+  );
+};
